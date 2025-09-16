@@ -484,7 +484,7 @@ h2{
 .Popup-content {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
   padding: 20px 30px;
   border-radius: 20px;
   background: #e8f5e9; /* Light green background */
