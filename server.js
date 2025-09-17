@@ -49,6 +49,13 @@ function buildRedirectQuery(q) {
     return `?page=${page}&limit=${limit}&search=${encodeURIComponent(search)}&sortBy=${encodeURIComponent(sortBy)}&order=${encodeURIComponent(order)}&showAll=${encodeURIComponent(showAll)}`;
 }
 
+
+
+
+
+
+
+
 // ====== Routes ======
 
 // Home
@@ -78,6 +85,12 @@ app.get('/', (req, res) => {
 </html>`;
     res.send(html);
 });
+
+
+
+
+
+
 
 
 // ====== DEBUG CONSOLE PAGE ======
@@ -114,6 +127,15 @@ app.get('/console', (req, res) => {
 </html>`;
   res.send(html);
 });
+
+
+
+
+
+
+
+
+
 
 // ====== NEW TRUCK MASTER PAGE ======
 // ====== TRUCK MASTER PAGE ======
@@ -387,6 +409,12 @@ app.post('/insert-truck', express.json(), async (req, res) => {
         res.status(500).send('Error inserting data');
     }
 });
+
+
+
+
+
+
 
 
 
