@@ -175,7 +175,7 @@ app.get('/truck-master', async (req, res) => {
 
   <!-- Search Form -->
   <form method="GET" action="/truck-master" style="text-align:center; margin:20px;">
-      <input style="font-family: 'DM Sans', sans-serif;" type="text" name="truck" placeholder="Enter Truck Reg No" value="${truckRegNo ?? ''}" required>
+      <input id="TRUCK_REG_NO" style="font-family: 'DM Sans', sans-serif;" type="text" name="truck" placeholder="Enter Truck Reg No" value="${truckRegNo ?? ''}" required>
       <button style="font-family: 'DM Sans', sans-serif;" type="submit">Submit</button>
   </form>
 
@@ -278,6 +278,27 @@ app.get('/truck-master', async (req, res) => {
 </div>
 
   ` : ''}
+
+  <script>
+(function () {
+    // Get query parameters
+    const params = new URLSearchParams(window.location.search);
+
+    // Read TRUCK_REG_NO from query string
+    const truckRegNo = params.get('TRUCK_REG_NO');
+
+    // If TRUCK_REG_NO exists, set it in input field
+    if (truckRegNo) {
+        const truckInput = document.getElementById('TRUCK_REG_NO');
+        if (truckInput) {
+            truckInput.value = truckRegNo;
+        } else {
+            console.warn('Input with id="TRUCK_REG_NO" not found.');
+        }
+    }
+})();
+</script>
+
 
   <script>
     const form = document.getElementById('insertForm');
@@ -843,6 +864,7 @@ function openEditPopup(cardNo, status) {
 }
 function closeEditPopup() { document.getElementById('editPopup').style.display = 'none'; }
 
+//url throug find cardno
 
 (function () {
     // Get query parameters
